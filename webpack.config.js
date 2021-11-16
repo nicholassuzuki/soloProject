@@ -15,11 +15,15 @@ module.exports = {
     publicPath: '',
     filename: 'bundle.js'
   },
-  
-  devServer: {
-    port: 'auto',
+  devServer: { 
+    static: { 
+      publicPath: '/build/', 
+    }, 
+    port: 8080,
+    proxy: { 
+      '/api': 'localhost:3000', 
     },
-
+  },
 
 module: {
   rules: [
@@ -63,7 +67,7 @@ module: {
   // Depending on mode Webpack will apply different things
   // on the final bundle. For now, we don't need production's JavaScript 
   // minifying and other things, so let's set mode to development
-  mode: 'development',
+  mode: 'process.env.NODE_ENV',
   resolve: {
     extensions: ['.ts', '.jsx', '.js', '.svg', '.png']
     }, 

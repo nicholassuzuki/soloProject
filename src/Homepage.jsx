@@ -1,6 +1,6 @@
 import './styles.scss';
 import React from 'react';
-import Intro from './Intro.jsx';
+import Intro from './PicsButton.jsx';
 
 export default function Homepage() {
   return(
