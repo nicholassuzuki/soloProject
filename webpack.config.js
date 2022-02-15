@@ -19,9 +19,14 @@ module.exports = {
     static: { 
       publicPath: '/build/', 
     }, 
+    host: 'localhost',
     port: 8080,
+
+    
     proxy: { 
-      '/api': 'localhost:3000', 
+      '/api': 'http://localhost:3000/', 
+      '/SignUp:': 'http://localhost:3000/',
+      '/Login' : 'http://localhost:3000/'
     },
   },
 
